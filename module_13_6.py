@@ -37,11 +37,11 @@ async def inform(message):
     await message.answer("Информация о боте.")
 
 @dp.message_handler(text =['Рассчитать'])
-async def calc(message):
+async def main_menu(message):
     await message.answer("Выбери опцию:",reply_markup = ki )
 
 @dp.callback_query_handler(text =['formulas'])
-async def formulas(call):
+async def get_formulas(call):
     await call.message.answer("для мужчин: (10 x вес (кг) + 6.25 x рост (см) – 5 x возраст (г) + 5) x A;\n"
                               "для женщин: (10 x вес (кг) + 6.25 x рост (см) – 5 x возраст (г) – 161) x A.\n"
                               "A – это уровень активности человека, его различают обычно по пяти степеням "
